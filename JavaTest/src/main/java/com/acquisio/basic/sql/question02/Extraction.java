@@ -50,7 +50,15 @@ public class Extraction {
 
             // TODO: Insert query here
             // See requirement in this class javadoc
-            String query = "select 1 as dummyValue from dual";
+            // String query = "select 1 as dummyValue from dual";
+            string query = "SELECT e.id, e.department_id as departmentId ";
+            query = query.concat("FROM employees e");
+            query = query.concat("WHERE NOT EXISTS ");
+            query = query.concat("  ( ");
+            query = query.concat("      SELECT NULL ");
+            query = query.concat("      FROM employees_projects p ");
+            query = query.concat("      WHERE p.employee_id = e.id ");
+            query = query.concat("   ) ");
             
             ResultSet resultSet = conn.createStatement().executeQuery(query);
             H2DBUtil.displayResultSet(resultSet);
