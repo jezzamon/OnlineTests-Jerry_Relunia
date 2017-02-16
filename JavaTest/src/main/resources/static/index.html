@@ -31,11 +31,11 @@
                         <li>Département: {{employee.department.name}}</li>
                     </ul>
                 </div>
-                <input ng-model="employee.salary" placeholder="change salary" type="text">
-                <a ng-click="employees.updateSalaryTo(employee.salary)" > Update Salary </a>
+                <input ng-focus="captureLast(employee.salary)" ng-model="employee.salary"  type="text">
+                <a ng-click="updateSalaryTo(employee.salary)" > Update Salary </a>
                 <select ng-model="employee.department.name">
 								
-					<option value="{{employee.department.name}}">{{employee.department.name}}</option>
+					<option ng-repeat="d in deptNames" value="{{d.name}}">{{d.name}}</option>
            			
                 </select>
 

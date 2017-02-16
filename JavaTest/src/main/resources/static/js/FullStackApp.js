@@ -31,17 +31,48 @@ angular.module('FullStackApp', [])
 					
 				}
 			];
+        
+
+            //capture salary on focus to be used later
+			$scope.captureLast = function(tempSalary) {
+				console.log(tempSalary);
+				$scope.tempSalary = tempSalary;
+			}
 
             //validate range , track by $index
-            $scope.employees.updateSalaryTo = function(salary, i) {
+            $scope.updateSalaryTo = function(salary, i) {
 				console.log(i);
 				console.log(typeof(salary))
 				if (salary > 50000 || salary < 10000) {
 					alert("salary must be between $10,000 and $50,000")
-					$scope.employees[i].salary = 10000; //reset to minimum
+					$scope.employees[i].salary = $scope.tempSalary; //reset to minimum
 					
 				}
 			}
+
+            //mock some data
+            $scope.deptNames = [
+				{
+					name: "Human Resources"
+				},
+				{
+					name: "Accounting"
+				},
+				{
+					name: "Public Relations"
+				},
+				{
+					name: "Accounts Payable"
+				},
+				{
+					name: "Accounts Receivable"
+				}
+			];
+        
+        /*$http.get('/departments/').success(function(data) {
+        $scope.deptNames = data;
+        })*/
+
         /*$http.get('/employees/').success(function(data) {
             $scope.employees = data;
         })*/
