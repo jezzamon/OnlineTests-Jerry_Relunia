@@ -42,9 +42,13 @@ angular.module('FullStackApp', [])
             //validate range , track by $index
             $scope.updateSalaryTo = function(salary, i) {
 				console.log(i);
-				console.log(typeof(salary))
-				if (salary > 50000 || salary < 10000) {
-					alert("salary must be between $10,000 and $50,000")
+				
+                //check if int or decimal
+                if (salary % 1 != 0) {
+                    alert("salary must be an integer (no decimals)");
+                }
+				if (salary > 500000 || salary < 10000) {
+					alert("salary must be between $10,000 and $500,000")
 					$scope.employees[i].salary = $scope.tempSalary; //reset to minimum
 					
 				}
