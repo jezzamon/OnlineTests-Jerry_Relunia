@@ -51,7 +51,7 @@ public class Extraction {
             // TODO: Insert query here
             // See requirement in this class javadoc
             // String query = "select 1 as dummyValue from dual";
-            string query = "SELECT e.id, e.department_id as departmentId ";
+            String query = "SELECT e.id, e.department_id as departmentId ";
             query = query.concat("FROM employees e");
             query = query.concat("WHERE NOT EXISTS ");
             query = query.concat("  ( ");
