@@ -33,6 +33,11 @@
                 </div>
                 <input ng-model="employee.salary" placeholder="change salary" type="text">
                 <a ng-click="employees.updateSalaryTo(employee.salary)" > Update Salary </a>
+                <select ng-model="employee.department.name">
+								
+					<option value="{{employee.department.name}}">{{employee.department.name}}</option>
+           			
+                </select>
 
             </li>
         </ul>
