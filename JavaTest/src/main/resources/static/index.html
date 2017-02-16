@@ -31,6 +31,9 @@
                         <li>Département: {{employee.department.name}}</li>
                     </ul>
                 </div>
+                <input ng-model="employee.salary" placeholder="change salary" type="text">
+                <a ng-click="employees.updateSalaryTo(employee.salary)" > Update Salary </a>
+
             </li>
         </ul>
     </div>
