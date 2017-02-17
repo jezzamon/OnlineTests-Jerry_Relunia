@@ -22,5 +22,26 @@ public class FizzBuzz {
 
     private void fizzBuzz(int maxValue) {
         // TODO: Insert your code here
-    }
+        
+        for (var i = 0 ; i <= maxValue; i++) {
+	
+            console.log(i);
+            if (i % 3 === 0) {
+                /*console.log("fizz!");*/
+
+                System.out.println("fizz!");
+             }
+             if (i % 5 === 0) {
+                System.out.println("buzz!")
+         // 			console.log("buzz!");
+                
+    
+            } else {
+                System.out.println(maxValue)
+             }
+		
+	    }
+	}
+		
+    
 }
